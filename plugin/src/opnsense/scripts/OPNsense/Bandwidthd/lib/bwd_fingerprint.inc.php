@@ -477,15 +477,6 @@ function bwd_fp_clean($s, $cap = 200) {
     return $s;
 }
 function bwd_fp_clean_deep($v, $cap = 200) {
-        if (is_array($v)) {
-                $out = array();
-                foreach ($v as $k => $x) { $out[bwd_fp_clean((string) $k, 64)] = bwd_fp_clean_deep($x, $cap); }
-                return $out;
-        }
-        return bwd_fp_clean($v, $cap);
-}
-
-function bwd_fp_clean_deep($v, $cap = 200) {
 	if (is_array($v)) {
 		$out = array();
 		foreach ($v as $k => $x) { $out[bwd_fp_clean((string) $k, 64)] = bwd_fp_clean_deep($x, $cap); }
